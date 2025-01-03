@@ -1,0 +1,109 @@
+---
+
+---
+
+<section>
+  <div class="content">
+    <div class="track">
+      <div class="slider">
+        <img src="/src/assets/gmail.svg" alt="gmail" />
+        <p>SquadGamesStudio</p>
+      </div>
+      <div class="slider">
+        <img src="/src/assets/youtube.svg" alt="youtube" />
+        <p>SquadGamesStudio</p>
+      </div>
+      <div class="slider">
+        <img src="/src/assets/facebook.svg" alt="facebook" />
+        <p>SquadGamesStudio</p>
+      </div>
+      <div class="slider">
+        <img src="/src/assets/instagram.svg" alt="instagram" />
+        <p>SquadGamesStudio</p>
+      </div>
+      <div class="slider">
+        <img src="/src/assets/x.svg" alt="x" />
+        <p>SquadGamesStudio</p>
+      </div>
+
+      <div class="slider">
+        <img src="/src/assets/gmail.svg" alt="gmail" />
+        <p>SquadGamesStudio</p>
+      </div>
+      <div class="slider">
+        <img src="/src/assets/youtube.svg" alt="youtube" />
+        <p>SquadGamesStudio</p>
+      </div>
+      <div class="slider">
+        <img src="/src/assets/facebook.svg" alt="facebook" />
+        <p>SquadGamesStudio</p>
+      </div>
+      <div class="slider">
+        <img src="/src/assets/instagram.svg" alt="instagram" />
+        <p>SquadGamesStudio</p>
+      </div>
+      <div class="slider">
+        <img src="/src/assets/x.svg" alt="x" />
+        <p>SquadGamesStudio</p>
+      </div>
+      <div class="slider">
+        <img src="/src/assets/gmail.svg" alt="gmail" />
+        <p>SquadGamesStudio</p>
+      </div>
+      <div class="slider">
+        <img src="/src/assets/youtube.svg" alt="youtube" />
+        <p>SquadGamesStudio</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    overflow: hidden;
+  }
+
+  .content {
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    background-color: #252525;
+  }
+
+  .track {
+    display: flex;
+    animation: autoRun 40s linear infinite;
+    -webkit-animation: autoRun 40s linear infinite;
+    width: calc(250px * 12);
+    padding-top: 3px;
+  }
+
+  .slider {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    justify-content: center;
+    img {
+      width: 2.6vw;
+      min-width: 40px;
+    }
+    p {
+      font-size: calc(0.8vw + 0.5em);
+      font-family: sans-serif;
+      color: #fff;
+      text-shadow: 0 5px 10px #0004;
+      box-sizing: border-box;
+    }
+  }
+
+  @keyframes autoRun {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-250px * 5));
+      transform: translateX(calc(-250px * 5));
+    }
+  }
+</style>
