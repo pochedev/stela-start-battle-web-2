@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import background from "../assets/background.jpg";
+import background from "../assets/background.png";
 import logo from "../assets/logo.webp";
 ---
 
@@ -52,9 +52,10 @@ import logo from "../assets/logo.webp";
     .info {
       width: 40%;
       color: #fff;
-      text-shadow: 0 5px 10px #0004;
+      text-shadow: 0 5px 30px #0004;
       box-sizing: border-box;
       z-index: 1;
+      backdrop-filter: blur(2px);
 
       h1 {
         font-size: calc(2vw + 1em);
