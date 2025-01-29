@@ -2,6 +2,12 @@
 import { Image } from "astro:assets";
 import background from "../assets/background.png";
 import logo from "../assets/logo.webp";
+import x from "../assets/x.png";
+import youtube from "../assets/youtube.png";
+import instamgran from "../assets/instamgran.png";
+import twich from "../assets/twich.png";
+import facebook from "../assets/facebook.png";
+import item from "../assets/item.png";
 ---
 
 <section>
@@ -9,18 +15,30 @@ import logo from "../assets/logo.webp";
     <picture class="back">
       <Image class="background" src={background} alt="back" />
     </picture>
-    <div class="info">
-      <picture>
-        <Image class="logo" src={logo} alt="logo" />
-        <div>
-          <h1>Lorem ipsum dolor, sit amet consectetur</h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati,
-            quasi perferendis? Quibusdam similique dolore nostrum quas nesciunt
-            consectetur odit animi, eos dolores minima expedita amet. Magni,
-            recusandae? Sequi, dignissimos ad.
-          </p>
-        </div>
+    <div class="wapper">
+      <div class="info">
+        <picture>
+          <Image class="logo" src={logo} alt="logo" />
+          <div>
+            <h1>Lorem ipsum dolor, sit amet consectetur</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Obcaecati, quasi perferendis? Quibusdam similique dolore nostrum
+              quas nesciunt consectetur odit animi, eos dolores minima expedita
+              amet. Magni, recusandae? Sequi, dignissimos ad.
+            </p>
+          </div>
+          <div class="social">
+            <Image class="icon" src={x} alt="twiter" />
+            <Image class="icon" src={youtube} alt="youtube" />
+            <Image class="icon" src={instamgran} alt="instamgran" />
+            <Image class="icon" src={twich} alt="twich" />
+            <Image class="icon" src={facebook} alt="facebook" />
+          </div>
+        </picture>
+      </div>
+      <picture class="content">
+        <Image class="item" src={item} alt="cosito" />
       </picture>
     </div>
   </div>
@@ -29,9 +47,9 @@ import logo from "../assets/logo.webp";
     .banner {
       display: grid;
       place-content: center;
-      padding-left: 4vw;
+      overflow: hidden;
       padding-top: 10vw;
-      padding-bottom: 10vw;
+      padding-bottom: 4vw;
       position: relative;
     }
 
@@ -50,12 +68,20 @@ import logo from "../assets/logo.webp";
       mask-image: linear-gradient(black 80%, #0f0f0f 10%, transparent);
     }
 
+    .wapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 4vw;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1;
+    }
+
     .info {
-      width: 40%;
+      width: 70%;
       color: #fff;
       box-sizing: border-box;
       z-index: 1;
-      backdrop-filter: blur(3px);
 
       h1 {
         font-size: calc(2vw + 1em);
@@ -92,24 +118,82 @@ import logo from "../assets/logo.webp";
       height: auto;
     }
 
+    .icon {
+      width: 2.8rem;
+      height: 2.8rem;
+      padding-top: 2vw;
+      transition: all 100ms ease;
+    }
+
+    .icon:hover {
+      cursor: pointer;
+      transform: scale(0.9);
+    }
+
+    .content {
+      width: 40%;
+      transform: translateX(-4vw);
+    }
+
+    .item {
+      width: 400px;
+      height: 400px;
+    }
+
     @media (max-width: 900px) {
       .info {
-        width: 80%;
+        width: 90%;
 
         p {
           font-size: calc(0.8vw + 0.8em);
         }
       }
+
+      .wapper {
+        overflow: visible;
+        width: fit-content;
+      }
+
+      .content {
+        width: 20%;
+        transform: translate(-12em, 6vw);
+      }
+
+      .item {
+        width: 300px;
+        height: 300px;
+        opacity: 0.8;
+      }
     }
 
     @media (max-width: 600px) {
+      .wapper {
+        display: grid;
+        place-content: center;
+        padding-inline: 8vw;
+      }
+
       .info {
-        width: 70%;
+        width: 90%;
         margin: auto;
 
         p {
           font-size: calc(0.8vw + 1em);
         }
+      }
+
+      .content {
+        width: 100vw;
+        transform: translate(0, -8vw);
+        display: flex;
+        justify-content: center;
+      }
+
+      .item {
+        width: fit-content;
+        max-width: 300px;
+        min-width: 100px;
+        opacity: 1;
       }
     }
   </style>

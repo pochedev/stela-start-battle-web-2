@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import item1 from "../assets/item1.png";
-import item1_2 from "../assets/item1_2.png";
+import samurai from "../assets/samurai.png";
 ---
 
 <section>
@@ -26,12 +25,17 @@ import item1_2 from "../assets/item1_2.png";
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen></iframe>
     </div>
-    <div class="description">
-      <h2>Lorem ipsum dolor, sit</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi cum
-        corrupti veritatis esse praesentium vero quo
-      </p>
+    <div class="wapper">
+      <div class="description">
+        <h2>Lorem ipsum dolor, sit</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id sequi cum
+          corrupti veritatis esse praesentium vero quo
+        </p>
+      </div>
+      <picture class="content">
+        <Image class="item" src={samurai} alt="samurai" />
+      </picture>
     </div>
   </div>
 </section>
@@ -93,7 +97,7 @@ import item1_2 from "../assets/item1_2.png";
   }
   .video {
     width: 70%;
-    height: 28vw;
+    height: 28em;
     margin-right: 5vw;
     overflow: hidden;
     iframe {
@@ -102,8 +106,12 @@ import item1_2 from "../assets/item1_2.png";
     }
   }
 
-  .description {
+  .wapper {
     width: 40%;
+  }
+
+  .description {
+    width: 100%;
     font-family: sans-serif;
     font-weight: bolder;
     color: #fff;
@@ -129,6 +137,11 @@ import item1_2 from "../assets/item1_2.png";
     }
   }
 
+  .item {
+    width: 300px;
+    height: 300px;
+  }
+
   @media (max-width: 900px) {
     .intro {
       width: 80%;
@@ -148,12 +161,25 @@ import item1_2 from "../assets/item1_2.png";
       height: 100%;
       margin: auto;
     }
-    .description {
+
+    .wapper {
       width: 80%;
+      margin: auto;
+    }
+
+    .description {
+      width: 100%;
       margin: auto;
       p {
         font-size: calc(0.8vw + 0.8em);
       }
+    }
+
+    .content {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -173,7 +199,12 @@ import item1_2 from "../assets/item1_2.png";
     }
 
     .description {
-      width: 80%;
+      width: 100%;
+    }
+
+    .item {
+      max-width: 300px;
+      min-width: 100px;
     }
   }
 </style>
