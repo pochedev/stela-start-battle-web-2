@@ -1,0 +1,122 @@
+---
+import { Image } from "astro:assets";
+import luffy from "../assets/luffy.jpg";
+---
+
+<main>
+  <h1>Gallery</h1>
+  <section id="section">
+    <div class="pin-wrap-sticky">
+      <div class="pin-wrap">
+        <div class="slider">
+          <h2>title 1</h2>
+          <Image class="item" src={luffy} alt="luffy" />
+        </div>
+        <div class="slider">
+          <h2>title 2</h2>
+          <Image class="item" src={luffy} alt="luffy" />
+        </div>
+        <div class="slider">
+          <h2>title 3</h2>
+          <Image class="item" src={luffy} alt="luffy" />
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  @keyframes move {
+    to {
+      transform: translateX(calc(-100% + 100vw));
+    }
+  }
+
+  @keyframes show {
+    from {
+      scale: 0.5;
+      opacity: 0.5;
+    }
+
+    to {
+      scale: 1;
+      opacity: 1;
+      transform: rotate();
+    }
+  }
+
+  #section {
+    height: 500vh;
+    overflow: visible;
+    color: #fff;
+    font-size: calc(1vw + 1em);
+    margin: 0;
+    font-family: "Silkscreen", serif;
+    font-weight: 400;
+    font-style: normal;
+    word-break: break-word;
+    text-shadow:
+      0 1px 10px #ffeb55,
+      0 2px 10px #d91656,
+      0px 3px 45px #81127c;
+
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: calc(3vw + 1em);
+    margin: 0;
+    padding-bottom: 20px;
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
+    word-break: break-word;
+    text-shadow:
+      0 0 5px black,
+      0 1px 10px #ffeb55,
+      0 2px 10px #d91656,
+      0px 3px 45px #81127c;
+    text-align: center;
+  }
+
+  .pin-wrap-sticky {
+    height: 100vh;
+    width: 99vw;
+    position: sticky;
+    top: 0;
+    overflow-x: hidden;
+  }
+
+  .pin-wrap {
+    height: 100vh;
+    width: 280vmax;
+    display: flex;
+
+    will-change: transform;
+    animation: linear move forwards;
+
+    animation-timeline: --section-pin-tl;
+    animation-range: contain 0% contain 100%;
+  }
+
+  .slider {
+    display: grid;
+    place-content: center;
+    width: 100%;
+
+    animation: linear show both;
+    animation-timeline: --section-pin-tl;
+    animation-range: cover;
+
+    h2 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .item {
+    width: 80vw;
+  }
+</style>
