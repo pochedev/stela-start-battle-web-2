@@ -32,19 +32,6 @@ import luffy from "../assets/luffy.jpg";
     }
   }
 
-  @keyframes show {
-    from {
-      scale: 0.5;
-      opacity: 0.5;
-    }
-
-    to {
-      scale: 1;
-      opacity: 1;
-      transform: rotate();
-    }
-  }
-
   #section {
     height: 500vh;
     overflow: visible;
@@ -91,8 +78,10 @@ import luffy from "../assets/luffy.jpg";
 
   .pin-wrap {
     height: 100vh;
-    width: 280vmax;
+    width: 320vmax;
     display: flex;
+    position: relative;
+    padding-right: 10%;
 
     will-change: transform;
     animation: linear move forwards;
@@ -102,16 +91,13 @@ import luffy from "../assets/luffy.jpg";
   }
 
   .slider {
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
 
-    animation: linear show both;
-    animation-timeline: --section-pin-tl;
-    animation-range: cover;
-
     h2 {
-      width: 100%;
+      width: 70%;
       text-align: center;
     }
   }
