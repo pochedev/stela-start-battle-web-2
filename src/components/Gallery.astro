@@ -10,15 +10,15 @@ import luffy from "../assets/Luffy.jpg";
       <div class="pin-wrap">
         <div class="slider">
           <h2>title 1</h2>
-          <Image class="item" src={luffy} alt="luffy" />
+          <Image id="img1" class="item" src={luffy} alt="luffy" />
         </div>
         <div class="slider">
           <h2>title 2</h2>
-          <Image class="item" src={luffy} alt="luffy" />
+          <Image id="img2" class="item" src={luffy} alt="luffy" />
         </div>
         <div class="slider">
           <h2>title 3</h2>
-          <Image class="item" src={luffy} alt="luffy" />
+          <Image id="img3" class="item" src={luffy} alt="luffy" />
         </div>
       </div>
     </div>
@@ -29,6 +29,39 @@ import luffy from "../assets/Luffy.jpg";
   @keyframes move {
     to {
       transform: translateX(calc(-100% + 100vw));
+    }
+  }
+
+  @-webkit-keyframes rotate-out-tl {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+      -webkit-transform-origin: bottom;
+      transform-origin: bottom;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: rotate(-140deg);
+      transform: rotate(-140deg);
+      -webkit-transform-origin: bottom;
+      transform-origin: bottom;
+      opacity: 0;
+    }
+  }
+  @keyframes rotate-out-tl {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+      -webkit-transform-origin: bottom;
+      transform-origin: bottom;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: rotate(-140deg);
+      transform: rotate(-140deg);
+      -webkit-transform-origin: bottom;
+      transform-origin: bottom;
+      opacity: 0;
     }
   }
 
@@ -95,6 +128,7 @@ import luffy from "../assets/Luffy.jpg";
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    overflow: hidden;
 
     h2 {
       width: 70%;
@@ -104,5 +138,27 @@ import luffy from "../assets/Luffy.jpg";
 
   .item {
     width: 80vw;
+  }
+
+  #img1 {
+    -webkit-animation: rotate-out-tl 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+    animation: rotate-out-tl 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation-timeline: --section-pin-tl;
+    animation-range: contain 10% contain 50%;
+  }
+  #img2 {
+    -webkit-animation: rotate-out-tl 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+    animation: rotate-out-tl 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation-timeline: --section-pin-tl;
+    animation-range: contain 60% contain 80%;
+  }
+  #img3 {
+    -webkit-animation: rotate-out-tl 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+    animation: rotate-out-tl 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation-timeline: --section-pin-tl;
+    animation-range: cover 83% 95%;
   }
 </style>
