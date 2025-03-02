@@ -145,6 +145,10 @@ import samurai from "../assets/samurai.png";
   }
 
   @media (max-width: 900px) {
+    section {
+      margin-bottom: 10em;
+    }
+
     .intro {
       width: 80%;
       margin: auto;
@@ -178,14 +182,14 @@ import samurai from "../assets/samurai.png";
     }
 
     .content {
-      width: 100%;
-
-      display: flex;
-      justify-content: center;
+      display: none;
     }
   }
 
   @media (max-width: 400px) {
+    section {
+      margin-bottom: 14em;
+    }
     .info {
       width: 100%;
       height: 60vw;
@@ -204,9 +208,8 @@ import samurai from "../assets/samurai.png";
       width: 100%;
     }
 
-    .item {
-      max-width: 300px;
-      min-width: 100px;
+    .content {
+      display: none;
     }
   }
 </style>

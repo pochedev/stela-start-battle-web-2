@@ -6,9 +6,9 @@ import luffy from "../assets/Luffy.jpg";
 ---
 
 <main>
-  <h1>Gallery</h1>
   <section id="section">
     <div class="pin-wrap-sticky">
+      <h1>Gallery</h1>
       <div class="pin-wrap">
         <div class="slider">
           <div class="info">
@@ -108,7 +108,7 @@ import luffy from "../assets/Luffy.jpg";
     color: #fff;
     font-size: calc(3vw + 1em);
     margin: 0;
-    padding-bottom: 20px;
+    padding-top: 20px;
     font-family: "Press Start 2P", serif;
     font-weight: 400;
     font-style: normal;
@@ -127,6 +127,7 @@ import luffy from "../assets/Luffy.jpg";
     position: sticky;
     top: 0;
     overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   .pin-wrap {
@@ -150,6 +151,8 @@ import luffy from "../assets/Luffy.jpg";
     padding-inline: 8vw;
     width: 100%;
     overflow: hidden;
+    height: fit-content;
+    margin: auto;
   }
 
   .info {
@@ -170,8 +173,9 @@ import luffy from "../assets/Luffy.jpg";
   }
 
   .item {
-    width: 60%;
-    height: 65%;
+    width: 50%;
+    height: 55%;
+    padding-bottom: 5%;
   }
 
   #img1 {
@@ -189,10 +193,75 @@ import luffy from "../assets/Luffy.jpg";
     animation-range: contain 60% contain 80%;
   }
   #img3 {
-    -webkit-animation: rotate-out-tl 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
-      both;
-    animation: rotate-out-tl 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-    animation-timeline: --section-pin-tl;
-    animation-range: cover 83% 95%;
+    animation: none;
+  }
+
+  @media (max-width: 900px) {
+    .pin-wrap-sticky {
+      height: 100vh;
+      border: solid green 3px;
+      overflow: hidden;
+    }
+
+    .pin-wrap {
+      height: 100vh;
+      padding-right: 0;
+      width: 230vmax;
+      border: solid blue 2px;
+    }
+
+    .slider {
+      display: block;
+      padding-inline: 0vw;
+      width: 95vw;
+      height: 95%;
+      overflow: hidden;
+      border: solid red 2px;
+    }
+
+    .info {
+      h2 {
+        width: 100%;
+        font-size: calc(2vw + 1.2em);
+        text-align: center;
+      }
+      p {
+        font-size: calc(0.8vw + 0.8em);
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .item {
+      width: 100%;
+      height: 75%;
+    }
+
+    #img1 {
+      animation-range: contain 20% contain 40%;
+    }
+    #img2 {
+      animation-range: contain 60% contain 95%;
+    }
+    #img3 {
+      animation: none;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .pin-wrap {
+      height: 100vh;
+      padding-right: 0;
+      width: 160vmax;
+      border: solid blue 2px;
+    }
+    #img1 {
+      animation-range: contain 20% contain 40%;
+    }
+    #img2 {
+      animation-range: contain 60% contain 95%;
+    }
+    #img3 {
+      animation: none;
+    }
   }
 </style>
